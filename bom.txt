@@ -1,0 +1,24 @@
+BOM ---> We can control the functionality of the browser
+
+window ---> Parent for the below 5 elements
+1) location
+2) history
+3) screen
+4) navigation ---> Used to control the client side objects
+5) document
+
+-----------------------------
+
+DOM ---> We can control the functionality of the website
+1) anchor
+2) forms
+.......
+
+1) querySelector()
+<script>
+  const email = document.querySelector("#user_name")
+  console.log(email)
+  email.style = "background-color:black, color:white";
+</script>
+
+2)

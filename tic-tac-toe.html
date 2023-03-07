@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TIC-TAC-TOE</title>
+  <style>
+    h1 {
+      text-align: center;
+    }
+
+    .outer {
+      display: grid;
+      justify-content: center;
+      grid-template-columns: repeat(3, 130px);
+      grid-template-rows: repeat(3, 130px);
+    }
+
+    .division {
+      transition: 1s;
+      display: grid;
+      justify-content: center;
+      border: 5px solid black;
+      border-radius: 8px;
+      background-color: rgb(230, 159, 73);
+      box-shadow: 3px 3px 3px 3px burlywood;
+    }
+
+    #score {
+      display: grid;
+      justify-content: center;
+      text-align: center;
+      grid-template-columns: repeat(3, 130px);
+      grid-template-rows: repeat(1, 50px);
+    }
+
+    #score1:hover{
+      letter-spacing: 1px;
+    }
+
+    #score2:hover{
+      letter-spacing: 1px;
+    }
+
+    #score1 {
+      transition: 0.5s;
+      justify-content: start;
+      border: 3px solid black;
+      text-align: center;
+      font-size: larger;
+      background-color: beige;
+      border-radius: 10px;
+    }
+
+    #score2 {
+      transition: 0.5s;
+      justify-content: end;
+      border: 3px solid black;
+      text-align: center;
+      font-size: larger;
+      background-color: beige;
+      border-radius: 10px;
+    }
+
+    #score3 {
+      transition: 0.5s;
+      justify-content: end;
+      text-align: center;
+      background-color: white;
+    }
+
+    .division:hover{
+     transform: scale(1.01);
+     box-shadow: 1px 1px 1px 1px rgb(110, 107, 107),
+     1px 1px 1px 1px rgb(88, 85, 85);
+    }
+    
+    button {
+      width: 100px;
+      height: 50px;
+      background-color: aliceblue;
+      transition: 0.5s;
+      border: 3px solid black;
+      text-align: center;
+      font-size: larger;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <center>
+  <h1>TIC-TAC-TOE GAME</h1>
+  <div id="score">
+  <div id="score1">Player-1<br>Score:- 0</div>
+  <div id="score3"></div>
+  <div id="score2">Player-2<br>Score:- 0</div>
+  </div>
+  <br>
+  <br>
+  <div class="outer">
+  <div class="division" onclick="myFunction"></div>
+  <div class="division" onclick="myFunction"></div>
+  <div class="division" onclick="myFunction"></div>
+  <div class="division" onclick="myFunction"></div>
+  <div class="division" onclick="myFunction"></div>
+  <div class="division" onclick="myFunction"></div>
+  <div class="division" onclick="myFunction"></div>
+  <div class="division" onclick="myFunction"></div>
+  <div class="division" onclick="myFunction"></div>
+  </div>
+  <br>
+  <br>
+  <button onclick="location.reload">Reset</button>
+  </center>
+
+  <script>
+    var k1 = 0
+    function myFunction(event) {
+      if(k1==9) {
+        validate();
+        return;
+      }
+
+      if((k1%2)==0 && (event.target.style.backgroundColor!="red") && (event.target.style.backgroundColor!="green")) {
+        event.target.style.backgroundColor="red";
+        k1=k1+1;
+      }
+      if((k1%2)==1 && (event.target.style.backgroundColor!="red") && (event.target.style.backgroundColor!="green")) {
+        event.target.style.backgroundColor="green";
+        k1=k1+1;
+      }
+      validate();
+  }
+
+  const index = document.getElementsByClassName("division")
+  console.log(index[1])
+  for (let click1 = 0; click1 < index.length; click1++) {
+    const element = index[click1];
+    element.addEventListener("click", myFunction)
+  }
+
+  const but = document.getElementsByTagName("button")
+  but[0].addEventListener("click", hello)
+
+  function hello(event) {
+    alert("The page is refreshed.");
+    for (let k = 0; k < index.length; k++) {
+      index[k].style.backgroundColor="rgb(230, 159, 73)";
+    }
+    a1=0, a2=0, a3=0, a4=0, a5=0, a6=0, a7=0, a8=0;
+    b1=0, b2=0, b3=0, b4=0, b5=0, b6=0, b7=0, b8=0;
+    k1=0;
+  }
+
+  var a1=0, a2=0, a3=0, a4=0, a5=0, a6=0, a7=0, a8=0;
+  var b1=0, b2=0, b3=0, b4=0, b5=0, b6=0, b7=0, b8=0;
+  var total_a=0;
+  var total_b=0;
+
+  function validate() {
+
+    if((index[0].style.backgroundColor=="red") && (index[1].style.backgroundColor=="red") && (index[2].style.backgroundColor=="red")){
+      a1 = 1;
+    }
+    
+    if((index[0].style.backgroundColor=="green") && (index[1].style.backgroundColor=="green") && (index[2].style.backgroundColor=="green")) {
+      b1 = 1;
+    }
+
+    if((index[3].style.backgroundColor=="red") && (index[4].style.backgroundColor=="red") && (index[5].style.backgroundColor=="red")) {
+      a2 = 1;
+    }
+
+    if((index[3].style.backgroundColor=="green") && (index[4].style.backgroundColor=="green") && (index[5].style.backgroundColor=="green")) {
+      b2 = 1;
+    }
+
+    if((index[6].style.backgroundColor=="red") && (index[7].style.backgroundColor=="red") && (index[8].style.backgroundColor=="red")){
+      a3 = 1;
+    }
+    
+    if((index[6].style.backgroundColor=="green") && (index[7].style.backgroundColor=="green") && (index[8].style.backgroundColor=="green")) {
+      b3 = 1;
+    }
+
+    if((index[0].style.backgroundColor=="red") && (index[3].style.backgroundColor=="red") && (index[6].style.backgroundColor=="red")) {
+      a4 = 1;
+    }
+    
+    if((index[0].style.backgroundColor=="green") && (index[3].style.backgroundColor=="green") && (index[6].style.backgroundColor=="green")) {
+      b4 = 1;
+    }
+
+    if((index[1].style.backgroundColor=="red") && (index[4].style.backgroundColor=="red") && (index[7].style.backgroundColor=="red")) {
+      a5 = 1;
+    }
+    
+    if((index[1].style.backgroundColor=="green") && (index[4].style.backgroundColor=="green") && (index[7].style.backgroundColor=="green")) {
+      b5 = 1;
+    }
+
+    if((index[2].style.backgroundColor=="red") && (index[5].style.backgroundColor=="red") && (index[8].style.backgroundColor=="red")) {
+      a6 = 1;
+    }
+    
+    if((index[2].style.backgroundColor=="green") && (index[5].backgroundColor=="green") && (index[8].style.backgroundColor=="green")) {
+      b6 = 1;
+    }
+
+    if((index[0].style.backgroundColor=="red") && (index[4].style.backgroundColor=="red") && (index[8].style.backgroundColor=="red")) {
+      a7 = 1;
+    }
+    
+    if((index[0].style.backgroundColor=="green") && (index[4].style.backgroundColor=="green") && (index[8].style.backgroundColor=="green")) {
+      b7 = 1;
+    }
+
+    if((index[2].style.backgroundColor=="red") && (index[4].style.backgroundColor=="red") && (index[6].style.backgroundColor=="red")) {
+      a8 = 1;
+    }
+    
+    if((index[2].style.backgroundColor=="green") && (index[4].style.backgroundColor=="green") && (index[6].target.backgroundColor=="green")) {
+      b8 = 1;
+    }
+
+
+    if((a1==1)||(a2==1)||(a3==1)||(a4==1)||(a5==1)||(a6==1)||(a7==1)||(a8==1)) {
+      total_a = total_a + 1;
+      const r1= document.getElementById("score1").innerText = "Player-1 Score:" + total_a;
+      alert("Player-1 has won the game. Score:-"+total_a);
+      for (let k = 0; k < index.length; k++) {
+        index[k].style.backgroundColor="rgb(230, 159, 73)";
+      }
+      a1=0, a2=0, a3=0, a4=0, a5=0, a6=0, a7=0, a8=0;
+      b1=0, b2=0, b3=0, b4=0, b5=0, b6=0, b7=0, b8=0;
+      k1=0;
+    }
+
+    if((b1==1)||(b2==1)||(b3==1)||(b4==1)||(b5==1)||(b6==1)||(b7==1)||(b8==1)) {
+      total_b = total_b + 1;
+      const r1= document.getElementById("score2").innerText = "Player-2 Score:" + total_b;
+      alert("Player-2 has won the game. Score:-"+total_b);
+      for (let k = 0; k < index.length; k++) {
+        index[k].style.backgroundColor="rgb(230, 159, 73)";
+      }
+      a1=0, a2=0, a3=0, a4=0, a5=0, a6=0, a7=0, a8=0;
+      b1=0, b2=0, b3=0, b4=0, b5=0, b6=0, b7=0, b8=0;
+      k1=0;
+    }
+
+    if(k1 == 9) {
+      alert("The match is draw!");
+      for (let k = 0; k < index.length; k++) {
+        index[k].style.backgroundColor="rgb(230, 159, 73)";
+      }
+      a1=0, a2=0, a3=0, a4=0, a5=0, a6=0, a7=0, a8=0;
+      b1=0, b2=0, b3=0, b4=0, b5=0, b6=0, b7=0, b8=0;
+      k1=0;
+    }
+  }
+
+  </script>
+</body>
+</html>

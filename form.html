@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+
+  <title>Input Elements</title>
+
+  <style>
+
+    .container{
+
+      display: grid;
+
+      /* padding : 5px; */
+
+      /* margin: 0px; */
+
+      justify-content: center;
+
+      /* text-align: start; */
+
+    }
+
+    .cus{
+
+      padding : 10px;
+
+      margin: 10px;
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <form onsubmit="myFunction()">
+
+  <div class="container">
+
+    <label for = "desig">Designation :</label>
+
+    <select id = "desig" name = "desig">
+
+      <option value = "">--SELECT--</option>
+
+      <option value = "1">Mr. </option>
+
+      <option value = "2">Mrs. </option>
+
+    </select>
+
+    <br>
+
+    <br>
+
+    <label for="user">Name : </label>
+
+    <input type = "text" placeholder="enter name" id = "user" class = "cus"/>
+
+    <br>
+
+    <label for="mail">E-mail: </label>
+
+    <input type = "email" placeholder="enter mail" id = "email" class = "cus"/>
+
+    <br>
+
+    <label for="age">Age :</label>
+
+    <input style="width: 100px;" type = "number" placeholder="enter age " id = "age" class = "cus" min = "1" max = "150"/>
+
+    <br>
+
+    <label for = "range">Range: </label>
+
+    <input type = "range" id = "range" class = "cus" min="10" max = "100">
+
+    <br>
+
+    <br>
+
+    <label for = "Time">Time : </label>
+
+    <input type = "time">
+
+    <br>
+
+    <br>
+
+    <label for = "date">Date :</label>
+
+    <input type = "date">
+
+    <br>
+
+    <br>
+
+    <label for = "Color">Color : </label>
+
+    <input type = "Color">
+
+    <br>
+
+    <br>
+
+    <input type="submit" value = "Click">
+
+    <br>
+
+    <br>
+
+    <input type="file">
+
+    <button>Submit</button>
+
+  </div>
+
+</form>
+
+  <script>
+
+    function myFunction() {
+      a1 = document.getElementById("desig")
+      if(a1 == "") {
+        alert("Please select the designation")
+      }
+      a2 = document.getElementById("user")
+      if(a2 == "") {
+        alert("Please enter your user name")
+      }
+    }
+
+  </script>
+
+</body>
+
+</html>

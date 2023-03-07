@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="refresh">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+</head>
+<body>
+
+  <button class="btn btn-primary" id="btn">click me</button>
+  <script>
+    const customEvent = new Event("name_of_event");
+
+    div.addEventListener("name_of_event", function(event){
+      alert(`id is $(event.target.id)`);
+      event.target.innerHTML = "<b>adding text in div</b>"
+    })
+
+    document.getElementById("btn").addEventListener("click", function(){
+      document.dispatchEvent(customEvent);
+    })
+    for (let index = 0; index < 99999999; index++) {
+      console.log(index);
+      if(index == 7777) {
+        div.dispatchEvent(customEvent);
+        break;
+      }
+    }
+  </script>
+
+</body>
+</html>
+
+<!-- namespaces
+const car = {
+  engine_start : function(){
+
+  }
+} -->
